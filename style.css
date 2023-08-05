@@ -2,70 +2,93 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: sans-serif
 }
-main{
+
+main {
   height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 body {
   margin: 0;
   padding: 0;
   width: 100vw;
   height: 100vh;
   display: flex;
-
+  box-sizing: border-box;
   align-items: center;
   flex-direction: column;
 }
 
 .header {
   width: 100%;
-  height: 50px;
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  flex-direction: row;
   border: 1px solid black;
-  padding: 20px;
+  padding: 50px;
+}
+
+.header .contenedor-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 60vw;
 }
 
 .contenedor-principal {
-  width: 80vw;
-  height: 80vh;
+  margin: 30px;
+  width: auto;
+  height: auto;
+  padding: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   border: 1px solid black;
+  flex-wrap: nowrap;
 }
 
-.contenedor-info-project {
+.contenedor-info-projectos {
   max-width: 600px;
   min-width: 500px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  justify-content: space-between;
-  border: 1px solid black;
-}
-
-.inputs-info-projets {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  border: 1px solid black;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-.buttons-info-projects {
+.contenedor-crear-projectos {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  flex-wrap: nowrap;
+}
+
+.info-projectos {
+  margin-top: 20px;
+}
+
+.info-projectos {
+  margin-top: 20px;
+}
+
+.info-projectos .fecha-creacion-projecto {
+  display: flex;
+  flex-direction: row;
+}
+
+.info-projectos .duracion-projecto {
+  display: flex;
+  flex-direction: row;
 }
 
 .contenedor-time-tracker {
@@ -75,6 +98,9 @@ body {
   flex-direction: column;
   max-width: 600px;
   min-width: 500px;
+  border: 1px solid black;
+  margin-top: 40px;
+  padding: 20px;
 }
 
 .contenedor-cronometro {
@@ -86,12 +112,14 @@ body {
   justify-content: space-between;
 
 }
+
 .contenedor-time-visual {
   display: flex;
   flex-direction: row;
   width: 100%;
   flex-wrap: nowrap;
 }
+
 .contenedor-time-visual progress {
   width: 100%;
   height: 30px;
@@ -99,15 +127,36 @@ body {
   border-radius: 5px;
   box-sizing: border-box;
 }
+
 progress::-webkit-progress-bar {
   background-color: #f0f0f0;
 }
-.contenedor-time-visual .pomodoro{
+
+.contenedor-time-visual .pomodoro {
   width: 50%;
 }
-.contenedor-time-visual .break{
+
+.contenedor-time-visual .break {
   width: 20%;
 }
-.contenedor-time-visual .long-break{
+
+.contenedor-time-visual .long-break {
   width: 35%;
+}
+
+footer {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer div {
+  display: flex;
+  flex-direction: row;
+  width: 60vw;
+  min-width: 500px;
+  justify-content: space-between;
+  font-size: 12px;
 }

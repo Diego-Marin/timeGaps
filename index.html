@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
@@ -10,47 +10,69 @@
 
 <body>
   <header class="header">
-    <div>
-      <button>Menu</button>
-      <button>DarkMode</button>
-      <button>LighMode</button>
-    </div>
-    <div>
-      <h1>TimeGaps</h1>
+    <div class="contenedor-header">
+      <div>
+        <button>Menu</button>
+        <button>DarkMode</button>
+        <button>LighMode</button>
+      </div>
+      <div>
+        <h1>TimeGaps</h1>
+      </div>
     </div>
   </header>
 
   <main>
-    <div class="contenedor-principal">
 
-      <div class="contenedor-info-project">
-        <div class="inputs-info-projets">
-          <input type="text" name="" id="">
-          <input type="text" name="" id="">
+    <section class="contenedor-principal">
+
+      <div class="contenedor-info-projectos">
+
+        <div class="contenedor-crear-projectos">
+          <div>
+            <input type="text" name="" id="">
+          </div>
+          <div>
+            <button>New Project</button>
+            <select name="nombre_del_elemento">
+              <option value="" disabled selected>Projectos</option>
+              <option value="opcion1">Opción 1</option>
+              <option value="opcion2">Opción 2</option>
+            </select>
+            <a href="reportes.html" target="_blank">
+              <button>Reportes</button>
+            </a>
+          </div>
         </div>
-        <div class="buttons-info-projects">
-          <button>New Project</button>
-          <button>Historial</button>
+
+        <div class="info-projectos">
+          <p>Nombre del Proyecto</p>
+          <div class="fecha-creacion-projecto">
+            <label for="fechaProjecto">Fecha de creacion:</label>
+            <p name="fechaProjecto" required>05/08/2023</p>
+          </div>
+          <div class="duracion-projecto">
+            <label for="duracion">Fecha de creacion:</label>
+            <p name="duracion" required>60:00:00</p>
+          </div>
         </div>
+
       </div>
-  
+
       <div class="contenedor-time-tracker">
-        <div class="contenedor-tituloStadoPomo">
-          <h3>Pomodoro #1</h3>
-        </div>
-  
+        <p>Pomodoro #1</p>
+
         <div class="contenedor-cronometro">
           <div>
             <h1 id="cronometro">00:00:00</h1>
           </div>
-  
           <div>
             <button onclick="iniciarCronometro()">Play</button>
-            <button onclick="detenerCronometro()">Stop</button>
+            <button onclick="detenerCronometro()">Pause</button>
             <button onclick="reiniciarCronometro()">Reset</button>
           </div>
         </div>
-  
+
         <div class="contenedor-time-visual">
           <progress id="progressBar" class="pomodoro" value="50" max="100"></progress>
           <progress id="progressBar" class="break" value="0" max="100"></progress>
@@ -61,12 +83,19 @@
           <progress id="progressBar" class="pomodoro" value="0" max="100"></progress>
           <progress id="progressBar" class="long-break" value="0" max="100"></progress>
         </div>
-  
+
       </div>
-    </div>
+
+    </section>
+
   </main>
 
   <footer>
+    <div>
+      <p>Copyleft © 2023 | Diseñado y construido por Diego Mejia.</p>
+      <p>Hecho con amor en Colombia. 💜</p>
+    </div>
+
   </footer>
 
   <script src="script.js"></script>
