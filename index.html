@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TimesGaps</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="header">
+    <div>
+      <button>Menu</button>
+      <button>DarkMode</button>
+      <button>LighMode</button>
+    </div>
+    <div>
+      <h1>TimeGaps</h1>
+    </div>
+  </header>
+
+  <main>
+    <div class="contenedor-principal">
+
+      <div class="contenedor-info-project">
+        <div class="inputs-info-projets">
+          <input type="text" name="" id="">
+          <input type="text" name="" id="">
+        </div>
+        <div class="buttons-info-projects">
+          <button>New Project</button>
+          <button>Historial</button>
+        </div>
+      </div>
+  
+      <div class="contenedor-time-tracker">
+        <div class="contenedor-tituloStadoPomo">
+          <h3>Pomodoro #1</h3>
+        </div>
+  
+        <div class="contenedor-cronometro">
+          <div>
+            <h1 id="cronometro">00:00:00</h1>
+          </div>
+  
+          <div>
+            <button onclick="iniciarCronometro()">Play</button>
+            <button onclick="detenerCronometro()">Stop</button>
+            <button onclick="reiniciarCronometro()">Reset</button>
+          </div>
+        </div>
+  
+        <div class="contenedor-time-visual">
+          <progress id="progressBar" class="pomodoro" value="50" max="100"></progress>
+          <progress id="progressBar" class="break" value="0" max="100"></progress>
+          <progress id="progressBar" class="pomodoro" value="0" max="100"></progress>
+          <progress id="progressBar" class="break" value="0" max="100"></progress>
+          <progress id="progressBar" class="pomodoro" value="0" max="100"></progress>
+          <progress id="progressBar" class="break" value="0" max="100"></progress>
+          <progress id="progressBar" class="pomodoro" value="0" max="100"></progress>
+          <progress id="progressBar" class="long-break" value="0" max="100"></progress>
+        </div>
+  
+      </div>
+    </div>
+  </main>
+
+  <footer>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
