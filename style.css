@@ -112,7 +112,29 @@ body {
   justify-content: space-between;
 
 }
+#cronometro{
+  font-size: 50px;
+}
+.contenedor-botones{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.boton{
+  height: 20px;
+  width: 50px;
+  font-weight:bold;
+}
+#boton-inicio-pausa.iniciar{
+  background-color: #b7e1f6;
+}
+#boton-inicio-pausa.pausar{
 
+  background-color: #719aae;
+}
+#boton-reiniciar{
+  background-color: #b7e1f6;
+}
 .contenedor-time-visual {
   display: flex;
   flex-direction: row;
@@ -123,13 +145,16 @@ body {
 .contenedor-time-visual progress {
   width: 100%;
   height: 30px;
-  border: 0.5px solid white;
+  border: 0.5px solid rgb(255, 255, 255);
   border-radius: 5px;
   box-sizing: border-box;
 }
 
 progress::-webkit-progress-bar {
-  background-color: #f0f0f0;
+  background-color: #ebebeb;
+}
+#progressBar::-webkit-progress-value {
+  background-color: green; /* Cambia el color aquí */
 }
 
 .contenedor-time-visual .pomodoro {
@@ -146,10 +171,11 @@ progress::-webkit-progress-bar {
 
 footer {
   width: 100%;
-  height: 100px;
+  height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 1px solid black;
 }
 
 footer div {
