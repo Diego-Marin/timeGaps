@@ -15,6 +15,21 @@ let horas = 0;
 let intervaloDeTiempo;
 let estadoCronometro = 'pausado'; // Dos estados posibles: 'pausado' o 'andando'.
 
+// Funcion para mostrar una seccion y ocultar las demas.
+function mostrarSeccion(idSeccion) {
+  const secciones = document.getElementsByClassName('seccion');
+  
+  for (let i = 0; i < secciones.length; i++) {
+    secciones[i].classList.remove('seccion-visible');
+  }
+  
+  const seccionMostrar = document.getElementById(idSeccion);
+  if (seccionMostrar) {
+    seccionMostrar.classList.add('seccion-visible');
+  }
+}
+
+
 // Actualizar el cronometro.
 function actualizarCronometro() {
   segundos++;
@@ -111,23 +126,32 @@ let elementProgressBar = 1;
 
 const getProgressBar = function () {
   let elementProgress;
+  let tagProgreso = document.getElementById('tagProgress');
 
   if (elementProgressBar === 1) {
     elementProgress = 'pomodoro1';
+    tagProgreso.textContent = 'Pomodoro #1';
   } else if (elementProgressBar === 2) {
     elementProgress = 'break1';
+    tagProgreso.textContent = 'Break #1';
   } else if (elementProgressBar === 3) {
     elementProgress = 'pomodoro2';
+    tagProgreso.textContent = 'Pomodoro #2';
   } else if (elementProgressBar === 4) {
     elementProgress = 'break2';
+    tagProgreso.textContent = 'Break #2';
   } else if (elementProgressBar === 5) {
     elementProgress = 'pomodoro3';
+    tagProgreso.textContent = 'pomodoro #3';
   } else if (elementProgressBar === 6) {
     elementProgress = 'break3';
+    tagProgreso.textContent = 'Break #3';
   } else if (elementProgressBar === 7) {
     elementProgress = 'pomodoro4';
+    tagProgreso.textContent = 'Pomodoro #4';
   } else if (elementProgressBar === 8) {
     elementProgress = 'break4';
+    tagProgreso.textContent = 'Long Break';
   }
   const elementosBarProgreso = document.getElementById(elementProgress);
   return elementosBarProgreso;
@@ -136,6 +160,7 @@ const getProgressBar = function () {
 const audioElement = new Audio('./assets/sound/tono.mp3');
 
 function reproducirAudio(audioElement) {
+  console.log(elementProgressBar, progressValue);
   if (elementProgressBar === 2 && progressValue === 0) {
     audioElement.play();
   } else if (elementProgressBar === 3 && progressValue === 0) {
