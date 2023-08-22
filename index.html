@@ -1,96 +1,188 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TimesGaps</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
 
-  <body>
-    <header class="header">
-      <div class="contenedor-header">
-        <div>
-          <button>Menu</button>
-          <button>DarkMode</button>
-          <button>LighMode</button>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TimesGaps</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <section class="contenedor-side-bar">
+    <div class="contenedor-logo">
+      <h1>TimeGaps</h1>
+    </div>
+    <nav class="menu-barra-lateral">
+      <ul class="lista-nav">
+        <li>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock"
+            viewBox="0 0 16 16">
+            <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z" />
+            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z" />
+          </svg>
+          <a href="#timeTracker">Time Tracker</a>
+        </li>
+
+        <li>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="bi bi-file-earmark-text" viewBox="0 0 16 16">
+            <path
+              d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z" />
+            <path
+              d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5L9.5 0zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z" />
+          </svg>
+          <a href="#reportes">Reportes</a>
+        </li>
+        <li>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear"
+            viewBox="0 0 16 16">
+            <path
+              d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z" />
+            <path
+              d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z" />
+          </svg>
+          <a href="#configuracion">Configuracion</a>
+        </li>
+        <li>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-plus"
+            viewBox="0 0 16 16">
+            <path
+              d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+            <path fill-rule="evenodd"
+              d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z" />
+          </svg>
+          <a href="#contacto">Contacto</a>
+        </li>
+      </ul>
+    </nav>
+    <p>Copyright © 2023 <br>Diseñado y construido por Diego Mejia. 💜</p>
+
+    <!-- <div class="contendor-botones">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list"
+        viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+          d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-moon" viewBox="0 0 16 16">
+        <path
+          d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278zM4.858 1.311A7.269 7.269 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.316 7.316 0 0 0 5.205-2.162c-.337.042-.68.063-1.029.063-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286z" />
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-brightness-high" viewBox="0 0 16 16">
+        <path
+          d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+      </svg>
+    </div> -->
+    
+    
+  </section>
+
+  <section class="contenedor-principal">
+
+    <div class="contenedor-time-tracker" id="timeTracker">
+      <div class="contenedor-info-projectos">
+
+        <div class="titulo-info-projectos">
+          <h2>Sección Projectos</h2>
         </div>
-        <div>
-          <h1>TimeGaps</h1>
+        <div class="contenedor-crear-projectos div-con-linea">
+          <div class="contenedor-input">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+              <path
+                d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+              <path fill-rule="evenodd"
+                d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+            </svg>
+            <input type="text" name="" id="">
+          </div>
+
+          <div class="contendor-botones">
+            <button>New Project</button>
+            <select name="nombre_del_elemento">
+              <option value="" disabled selected>Projectos</option>
+              <option value="opcion1">Opción 1</option>
+              <option value="opcion2">Opción 2</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="info-projectos">
+          <div class="nombre-projecto">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+              <path
+                d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+              <path fill-rule="evenodd"
+                d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+            </svg>
+            <h3>Desarrollo de aplicacion TimeGaps</h3>
+          </div>
+          <div class="fecha-creacion-projecto">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-calendar-week" viewBox="0 0 16 16">
+              <path
+                d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z" />
+              <path
+                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
+            </svg>
+            <h4 for="fechaProjecto">Fecha de creacion:</h4>
+            <p name="fechaProjecto" required>05/08/2023</p>
+          </div>
+          <div class="duracion-projecto">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+              <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z" />
+              <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z" />
+            </svg>
+            <h4 for="duracion">Horas trabajadas:</h4>
+            <p name="duracion" required>60:00:00</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="time-tracker">
+        <div class="titulo-time-tracker">
+          <h2>Sección Pomodoro</h2>
+        </div>
+        <p>Pomodoro #1</p>
+        <div class="contenedor-cronometro">
+          <h1 id="cronometro">00:00:00</h1>
+        </div>
+        <div class="contenedor-time-visual">
+          <progress id="pomodoro1" class="pomodoro" value="0" max="1500"></progress>
+          <progress id="break1" class="break" value="0" max="300"></progress>
+          <progress id="pomodoro2" class="pomodoro" value="0" max="1500"></progress>
+          <progress id="break2" class="break" value="0" max="300"></progress>
+          <progress id="pomodoro3" class="pomodoro" value="0" max="1500"></progress>
+          <progress id="break3" class="break" value="0" max="300"></progress>
+          <progress id="pomodoro4" class="pomodoro" value="0" max="1500"></progress>
+          <progress id="break4" class="long-break" value="0" max="900"></progress>
+        </div>
+        <div class="contenedor-botones">
+          <button class="boton" id="boton-inicio-pausa">Iniciar</button>
+          <button class="boton" id="boton-reiniciar">Reset</button>
         </div>
       </div>
-    </header>
+    </div>
 
-    <main>
-      <section class="contenedor-principal">
-        <div class="contenedor-info-projectos">
+    <div class="contenedor-reportes" id="reportes">
 
-          <div class="contenedor-crear-projectos">
-            <div>
-              <input type="text" name="" id="">
-            </div>
-            <div>
-              <button>New Project</button>
-              <select name="nombre_del_elemento">
-                <option value="" disabled selected>Projectos</option>
-                <option value="opcion1">Opción 1</option>
-                <option value="opcion2">Opción 2</option>
-              </select>
-              <a href="reportes.html" target="_blank">
-                <button>Reportes</button>
-              </a>
-            </div>
-          </div>
+    </div>
 
-          <div class="info-projectos">
-            <p>Nombre del Proyecto</p>
-            <div class="fecha-creacion-projecto">
-              <label for="fechaProjecto">Fecha de creacion:</label>
-              <p name="fechaProjecto" required>05/08/2023</p>
-            </div>
-            <div class="duracion-projecto">
-              <label for="duracion">Fecha de creacion:</label>
-              <p name="duracion" required>60:00:00</p>
-            </div>
-          </div>
+    <div class="contendor-configuracion" id="configuracion">
 
-        </div>
+    </div>
 
-        <div class="contenedor-time-tracker">
-          <p>Pomodoro #1</p>
+    <div class="contenedor-contacto" id="contacto">
 
-          <div class="contenedor-cronometro">
-            <div>
-              <h1 id="cronometro">00:00:00</h1>
-            </div>
-            <div class="contenedor-botones">
-              <button class="boton" id="boton-inicio-pausa">Play</button>
-              <button class="boton" id="boton-reiniciar" >Reset</button>
-            </div>
-          </div>
+    </div>
 
-          <div class="contenedor-time-visual">
-            <progress id="pomodoro1" class="pomodoro" value="0" max="1500"></progress>
-            <progress id="break1" class="break" value="0" max="300"></progress>
-            <progress id="pomodoro2" class="pomodoro" value="0" max="1500"></progress>
-            <progress id="break2" class="break" value="0" max="300"></progress>
-            <progress id="pomodoro3" class="pomodoro" value="0" max="1500"></progress>
-            <progress id="break3" class="break" value="0" max="300"></progress>
-            <progress id="pomodoro4" class="pomodoro" value="0" max="1500"></progress>
-            <progress id="break4" class="long-break" value="0" max="900"></progress>
-          </div>
+  </section>
 
-        </div>
-      </section>
-    </main>
+  <script src="script.js"></script>
+</body>
 
-    <footer>
-      <div>
-        <p>Copyleft © 2023 | Diseñado y construido por Diego Mejia.</p>
-        <p>Hecho con amor en Colombia. 💜</p>
-      </div>
-
-    </footer>
-    <script src="script.js"></script>
-  </body>
 </html>
