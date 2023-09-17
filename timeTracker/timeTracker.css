@@ -1,0 +1,395 @@
+/***********************************   contenedor timeTracker **************************************/
+.contenedor-time-tracker {
+  width: 100%;
+  height: 100%;
+  padding: 40px 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-radius: 5px;
+  background: var(--backgroundSection);
+  box-sizing: border-box;
+}
+
+.contenido-timeTracker {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: flex-start;
+}
+
+/***********************************   contenedor interno-infoProjectos **************************************/
+.contenedor-interno-infoProjectos {
+  width: 100%;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background: var(--backgroundElement);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 25px;
+}
+
+.titulo-info-projectos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  padding-bottom: 20px;
+}
+
+.contenedor-crear-projectos {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding-bottom: 20px;
+}
+
+.contenedor-input {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 80%;
+  height: 30px;
+  box-sizing: border-box;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 5px;
+}
+
+.contenedor-input input {
+  width: 100%;
+  height: 100%;
+  padding: 3.5px 0 3.5px 35px;
+  border-style: none;
+  border-radius: 5px;
+  background: var(--backgroundAccion);
+  font-size: var(--fontSizes);
+  color: var(--colorTexto);
+}
+
+input:focus {
+  outline: 1px solid var(--colorTexto);
+  background-color: var(--backgroundAccionHover);
+}
+
+input:hover {
+  background-color: var(--backgroundAccionHover);
+}
+
+.contenedor-input svg {
+  position: absolute;
+  margin-left: 8px;
+  width: 16px;
+  height: 16px;
+}
+
+.contendor-botones {
+  display: flex;
+  gap: 10px;
+  padding-left: 10px;
+}
+
+.contendor-botones button {
+  width: auto;
+  padding: 15px;
+  background-color: var(--colorBotones);
+  color: var(--colorTexto);
+  font-size: var(--fontSizes);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.contendor-botones button:hover {
+  background-color: var(--colorBotonesHover);
+}
+
+.contendor-botones select {
+  width: auto;
+  padding: 10px;
+  background-color: var(--colorBotones);
+  color: var(--colorTexto);
+  font-size: var(--fontSizes);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+select:hover {
+  background-color: var(--colorBotonesHover);
+}
+
+select:focus {
+  background-color: var(--colorBotonesHover);
+  color: var(--colorTexto);
+  outline: none; 
+}
+
+select option {
+  background-color: var(--backgroundElement);
+}
+
+select option[disabled] {
+  display: none;
+}
+
+.info-projectos {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.info-projectos img {
+  color: var(--colorTexto);
+  margin-right: 20px;
+  width: 22px;
+  height: 22px;
+}
+
+.info-projectos .nombre-projecto {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.info-projectos p {
+  margin-left: 20px;
+}
+
+.info-projectos .fecha-creacion-projecto {
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.info-projectos .duracion-projecto {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+}
+
+/***********************************   contenedor interno-timeTracker **************************************/
+.contenedor-interno-timeTracker {
+  width: 100%;
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 5px;
+  background: var(--backgroundElement);
+  box-sizing: border-box;
+}
+
+.titulo-time-tracker {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  padding-bottom: 20px;
+}
+
+.contenedor-cronometro {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  background: var(--backgroundAccion);
+  box-sizing: border-box;
+}
+.cronometro{
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  gap: 50px;
+}
+
+#cronometro {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-family: 'Chivo Mono', monospace;
+  font-size: 70px;
+}
+
+.contenedor-botones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+#boton-inicio-pausa {
+  width: auto;
+  padding: 15px;
+  background-color: var(--colorBotones);
+  color: var(--colorTexto);
+  font-size: var(--fontSizes);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#boton-inicio-pausa:hover {
+  background-color: var(--colorBotonesHover);
+  color: var(--colorTextoBotonHover);
+}
+
+#boton-reiniciar {
+  width: auto;
+  padding: 15px;
+  background-color: var(--colorBotones);
+  color: var(--colorTexto);
+  font-size: var(--fontSizes);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#boton-reiniciar:hover {
+  background-color: var(--colorBotonesHover);
+  color: var(--colorTextoBotonHover);
+}
+
+#boton-programar{
+  width: auto;
+  padding: 15px;
+  background-color: var(--colorBotones);
+  color: var(--colorTexto);
+  font-size: var(--fontSizes);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.estado-progreso {
+  width: 100%;
+  padding: 10px 0 0 0;
+  display: flex;
+  gap: 30px;
+  box-sizing: border-box;
+  justify-content: center;
+}
+
+.contenedor-time-visual {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: nowrap;
+}
+
+.contenedor-time-visual progress {
+  width: 100%;
+  height: 40px;
+  border: 0.5px solid var(--backgroundAccion);
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.pomodoro::-webkit-progress-bar {
+  background-color: var(--backgroundPomodoro);
+}
+
+.break::-webkit-progress-bar {
+  background-color: var(--backgroundBreak);
+}
+
+.pomodoro::-webkit-progress-value {
+  background-color: rgb(32, 162, 71);
+}
+
+.break::-webkit-progress-value {
+  background-color: rgb(218, 253, 103);
+}
+
+.contenedor-time-visual .pomodoro {
+  width: 50%;
+}
+
+.contenedor-time-visual .break {
+  width: 20%;
+}
+
+.contenedor-time-visual .long-break {
+  width: 35%;
+}
+
+/***********************************   contenedor interno-Historial **************************************/
+.contenedor-interno-historial {
+  width: 100%;
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+  background: var(--backgroundElement);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+h1.title-historial{
+  padding-bottom: 20px;
+}
+
+.contenedor-tabla{
+  width: 100%;
+  border-radius: 5px;
+  background: var(--backgroundAccion);
+  box-sizing: border-box;
+  overflow: auto;
+  border-radius: 10px;
+}
+
+table{
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.665);
+  outline: none;
+  color: var(--backgroundSection);
+  border-collapse: collapse;
+  font-size: 16px;
+}
+
+th {
+  font-size: 18px;
+  padding: 15px;
+  font-weight: bolder;
+  background-color: rgba(255, 255, 255, 0.661);
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+}
+
+/*********************************** visibilidad de seccion timeTracker **************************************/
+.seccion {
+  display: none;
+}
+
+.seccion-visible {
+  display: inherit;
+}

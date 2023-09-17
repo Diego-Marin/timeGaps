@@ -1,0 +1,29 @@
+/* Contenedor reportes */
+
+.contenedor-reportes {
+    width: 100%;
+    max-width: 80%;
+    height: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 6px;
+    background: var(--backgroundSection);
+    box-sizing: border-box;
+    border: 1px solid brown;
+}
+
+.contenido-reportes {
+    width: 100%;
+    height: 100%;
+    border: 1px solid yellow;
+}
+
+.seccion {
+    display: none;
+}
+
+.seccion-visible {
+    display: inherit;
+}

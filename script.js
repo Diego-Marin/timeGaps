@@ -1,179 +1,84 @@
-/****************** Cronometro **********************/
+cargarPagina();
 
-// Seleccionar los botones.
-const botonInicioPausa = document.querySelector('#boton-inicio-pausa');
-const botonReiniciar = document.querySelector('#boton-reiniciar');
+/*****************************  Estado menu side bar ******************************/
 
-// Variables para almacenar los segundos, minutos y horas.
-let segundos = 0;
-let minutos = 0;
-let horas = 0;
+// Obtén todos los elementos li
+var elementosLi = document.querySelectorAll(".elementoLi");
 
-// Variables para almacenar el intervalo de tiempo que debe
-// transcurrir para actualizar el cronometro y el estado 
-// del cronometro.
-let intervaloDeTiempo;
-let estadoCronometro = 'pausado'; // Dos estados posibles: 'pausado' o 'andando'.
+// Agrega un controlador de eventos clic a cada elemento li
+elementosLi.forEach(function (li) {
+  li.addEventListener("click", function () {
+    // Desactiva los estilos de todos los elementos li
+    elementosLi.forEach(function (item) {
+      item.classList.remove("active");
+    });
+
+    // Activa los estilos solo para el elemento clicado
+    this.classList.add("active");
+  });
+});
+
+/************** Estado de visibilidad de secciones ************/
 
 // Funcion para mostrar una seccion y ocultar las demas.
-function mostrarSeccion(idSeccion) {
+function mostrarSeccion(parametro) {
   const secciones = document.getElementsByClassName('seccion');
-  
+
   for (let i = 0; i < secciones.length; i++) {
     secciones[i].classList.remove('seccion-visible');
   }
-  
-  const seccionMostrar = document.getElementById(idSeccion);
+
+  const seccionMostrar = document.getElementById(parametro);
   if (seccionMostrar) {
     seccionMostrar.classList.add('seccion-visible');
   }
 }
 
 
-// Actualizar el cronometro.
-function actualizarCronometro() {
-  segundos++;
 
-  if (segundos / 60 === 1) {
-    segundos = 0;
-    minutos++;
+/************** Funcion cargar modulos al index ******************/
 
-    if (minutos / 60 === 1) {
-      minutos = 0;
-      horas++;
+function cargarPagina() {
+  var xhrReportes = new XMLHttpRequest();
+  var xhrTimeTracker = new XMLHttpRequest();
+
+  var contenedorTimeTracker = document.getElementById('timeTracker');
+  var contenedorReportes = document.getElementById('reportes');
+
+  xhrReportes.onreadystatechange = function () {
+    if (xhrReportes.readyState == 4 && xhrReportes.status == 200) {
+      // Crear un elemento div temporal para contener el HTML recibido
+      var divTemporal = document.createElement('div');
+      divTemporal.innerHTML = xhrReportes.responseText;
+
+      // Obtener el elemento específico que necesitas
+      var elementosReportes = divTemporal.querySelector('#reportes-content');
+
+      // Agregar elementosReportes como hijo del contenedor principal
+      contenedorReportes.appendChild(elementosReportes);
     }
   }
 
-  // Agregar un cero a la izquierda si es necesario.
-  const segundosConFormato = asignarFormato(segundos);
-  const minutosConFormato = asignarFormato(minutos);
-  const horasConFormato = asignarFormato(horas);
+  xhrTimeTracker.onreadystatechange = function () {
+    if (xhrTimeTracker.readyState == 4 && xhrTimeTracker.status == 200) {
+      // Crear un elemento div temporal para contener el HTML recibido
+      var divTemporal = document.createElement('div');
+      divTemporal.innerHTML = xhrTimeTracker.responseText;
 
-  // Actualizar el contenido del cronometro.
-  const cronometro = document.getElementById('cronometro');
-  cronometro.innerText = `${horasConFormato}:${minutosConFormato}:${segundosConFormato}`;
+      // Obtener el elemento específico que necesitas
+      var elementosTimeTracker = divTemporal.querySelector('#content-timeTracker');
+
+      // Agregar elementosTimeTracker como hijo del contenedor principal
+      contenedorTimeTracker.appendChild(elementosTimeTracker);
+    }
+  }
+
+  xhrTimeTracker.open("GET", "./timeTracker/timeTracker.html", true);
+  xhrTimeTracker.send();
+
+  xhrReportes.open("GET", "./reportes/reportes.html", true);
+  xhrReportes.send();
+
 }
 
-// Agregar un cero a la izquierda si se necesita.
-function asignarFormato(unidadDeTiempo) {
-  return unidadDeTiempo < 10 ? '0' + unidadDeTiempo : unidadDeTiempo;
-}
 
-botonInicioPausa.addEventListener('click', function () {
-  if (estadoCronometro === 'pausado') {
-    intervaloDeTiempo = window.setInterval(actualizarCronometro, 1000);
-    estadoCronometro = 'andando';
-    botonInicioPausa.innerHTML = 'Pausar';
-  } else {
-    window.clearInterval(intervaloDeTiempo);
-    estadoCronometro = 'pausado';
-    botonInicioPausa.innerHTML = 'Iniciar';
-  }
-
-  if (estadoCronometro === 'andando') {
-    intervaloProgressBar = setInterval(() => {
-      const progressBar = getProgressBar();
-      if (progressValue < progressBar.max) {
-        progressValue++;
-        progressBar.value = progressValue;
-
-        if ((elementProgressBar === 1 || elementProgressBar === 3 || elementProgressBar === 5 || elementProgressBar === 7) && progressValue === 1500) {
-          elementProgressBar += 1;
-          progressValue = 0;
-        } else if ((elementProgressBar === 2 || elementProgressBar === 4 || elementProgressBar === 6) && progressValue === 300) {
-          elementProgressBar += 1;
-          progressValue = 0;
-        } else if (elementProgressBar === 8 && progressValue === 900) {
-          progressValue = 0;
-        }
-        reproducirAudio(audioElement);
-      }
-    }, 1000);
-  } else {
-    window.clearInterval(intervaloProgressBar);
-    progressValue = 0;
-  }
-});
-
-botonReiniciar.addEventListener('click', function () {
-  window.clearInterval(intervaloDeTiempo);
-  segundos = 0;
-  minutos = 0;
-  horas = 0;
-  document.getElementById('cronometro').innerHTML = '00:00:00';
-
-  // Botones.
-  botonInicioPausa.innerHTML = 'iniciar';
-  // Estado.
-  estadoCronometro = 'pausado';
-
-  // Barra de progreso.
-  let elementosProgressBar = document.getElementsByTagName('progress');
-  for (let i = 0; i < elementosProgressBar.length; i++) {
-    elementosProgressBar[i].value = 0;
-  }
-  elementProgressBar = 1;
-  window.clearInterval(intervaloProgressBar);
-});
-
-/****************** Barra de progreso del cronometro **********************/
-
-//Variables para aumentar la barra de progreso
-let progressValue = 0; // Valor actual de la barra de progreso
-let intervaloProgressBar; // Variable para almacenar el intervalo del cronómetro
-
-let elementProgressBar = 1;
-
-const getProgressBar = function () {
-  let elementProgress;
-  let tagProgreso = document.getElementById('tagProgress');
-
-  if (elementProgressBar === 1) {
-    elementProgress = 'pomodoro1';
-    tagProgreso.textContent = 'Pomodoro #1';
-  } else if (elementProgressBar === 2) {
-    elementProgress = 'break1';
-    tagProgreso.textContent = 'Break #1';
-  } else if (elementProgressBar === 3) {
-    elementProgress = 'pomodoro2';
-    tagProgreso.textContent = 'Pomodoro #2';
-  } else if (elementProgressBar === 4) {
-    elementProgress = 'break2';
-    tagProgreso.textContent = 'Break #2';
-  } else if (elementProgressBar === 5) {
-    elementProgress = 'pomodoro3';
-    tagProgreso.textContent = 'pomodoro #3';
-  } else if (elementProgressBar === 6) {
-    elementProgress = 'break3';
-    tagProgreso.textContent = 'Break #3';
-  } else if (elementProgressBar === 7) {
-    elementProgress = 'pomodoro4';
-    tagProgreso.textContent = 'Pomodoro #4';
-  } else if (elementProgressBar === 8) {
-    elementProgress = 'break4';
-    tagProgreso.textContent = 'Long Break';
-  }
-  const elementosBarProgreso = document.getElementById(elementProgress);
-  return elementosBarProgreso;
-};
-
-const audioElement = new Audio('./assets/sound/tono.mp3');
-
-function reproducirAudio(audioElement) {
-  console.log(elementProgressBar, progressValue);
-  if (elementProgressBar === 2 && progressValue === 0) {
-    audioElement.play();
-  } else if (elementProgressBar === 3 && progressValue === 0) {
-    audioElement.play();
-  } else if (elementProgressBar === 4 && progressValue === 0) {
-    audioElement.play();
-  } else if (elementProgressBar === 5 && progressValue === 0) {
-    audioElement.play();
-  } else if (elementProgressBar === 6 && progressValue === 0) {
-    audioElement.play();
-  } else if (elementProgressBar === 7 && progressValue === 0) {
-    audioElement.play();
-  } else if (elementProgressBar === 8 && progressValue === 0) {
-    audioElement.play();
-  }
-}

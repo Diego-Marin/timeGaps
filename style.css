@@ -8,7 +8,8 @@
   --backgroundElement: #262626;
   --colorLinea: #262626;
   --colorBotones: #554c9c;
-  --colorBotonesHover: #7e74da;
+  --colorBotonExtendido: #2c2845;
+  --colorBotonesHover: #48408f;
   --backgroundAccion: #403f40;
   --backgroundAccionHover: #5a595a;
   --logo: 30px;
@@ -37,9 +38,10 @@ body {
   overflow: hidden;
 }
 
-/* Section side-bar */
+/***********************************   Section SideBar **************************************/
 .contenedor-side-bar {
   width: 20%;
+  min-width: 290px;
   height: 100%;
   padding: 40px;
   display: flex;
@@ -52,9 +54,17 @@ body {
 
 .contenedor-side-bar .contenedor-logo {
   width: 100%;
-  padding: 20px 0;
-  font-size: var(--logo);
-  color: var(--colorTitulos);
+  /* Ancho deseado del div */
+  height: auto;
+  /* Alto deseado del div */
+  padding-bottom: 50px;
+}
+
+.contenedor-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* Ancho deseado del div */
 }
 
 .contenedor-side-bar .menu-barra-lateral {
@@ -76,18 +86,26 @@ body {
   width: 100%;
 }
 
-.menu-barra-lateral li {
+li {
+  width: 100%;
   list-style: none;
   text-decoration: none;
   display: flex;
   align-items: center;
   padding: 10px;
+  border-radius: 5px;
 }
 
 li:hover {
-  width: 100%;
   border-radius: 5px;
   background: var(--backgroundSectionDark);
+}
+
+/* Estilo cuando un elemento li está activo */
+li.active {
+  width: 100%;
+  border-radius: 5px;
+  background: var(--backgroundElement);
 }
 
 .botones-accesibilidad {
@@ -112,11 +130,11 @@ li:hover {
   margin-right: 20px;
 }
 
-/* Section principal */
+/***********************************   Section principal **************************************/
 .contenedor-principal {
-  width: 80%;
+  width: 100%;
   height: 100%;
-  padding: 30px;
+  padding: 40px 70px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -125,9 +143,8 @@ li:hover {
   box-sizing: border-box;
 }
 
-/* Contenedor TimeTracker */
-
-.contenedor-time-tracker {
+/***********************************   contenedor configuracion **************************************/
+.contendor-configuracion {
   width: 100%;
   max-width: 80%;
   height: 100%;
@@ -140,312 +157,8 @@ li:hover {
   box-sizing: border-box;
 }
 
-.contenedor-info-projectos {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
-  box-sizing: border-box;
-  background: var(--backgroundElement);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.titulo-info-projectos {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: auto;
-  margin-top: 20px;
-}
-
-.contenedor-crear-projectos {
-  width: auto;
-  height: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 30px;
-}
-
-.contenedor-input {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  width: 70%;
-  height: 30px;
-  box-sizing: border-box;
-  transition: background-color 0.3s, color 0.3s;
-  border-radius: 5px;
-}
-
-.contenedor-input input {
-  width: 100%;
-  height: 100%;
-  padding: 3.5px 0 3.5px 35px;
-  border-style: none;
-  border-radius: 5px;
-  background: var(--backgroundAccion);
-  font-size: var(--fontSizes);
-  color: var(--colorTexto);
-}
-
-input:focus {
-  outline: 1px solid var(--colorTexto);
-  background-color: var(--backgroundAccionHover);
-}
-
-input:hover {
-  background-color: var(--backgroundAccionHover);
-}
-
-.contenedor-input svg {
-  position: absolute;
-  margin-left: 8px;
-  width: 16px;
-  height: 16px;
-}
-
-.contendor-botones {
-  display: flex;
-  gap: 10px;
-  padding-left: 10px;
-}
-
-.contendor-botones button {
-  display: block;
-  width: 100%;
-  padding: 0 10px;
-  background-color: var(--colorBotones);
-  color: var(--colorTexto);
-  font-size: var(--fontSizes);
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.contendor-botones button:hover {
-  background-color: var(--colorBotonesHover);
-}
-
-.contendor-botones select {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  background-color: var(--colorBotones);
-  color: var(--colorTexto);
-  font-size: var(--fontSizes);
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.contendor-botones select:hover {
-  background-color: var(--colorBotonesHover);
-}
-
-.info-projectos {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 0 30px 30px 30px;
-}
-
-.info-projectos svg {
-  margin-right: 20px;
-  width: 22px;
-  height: 22px;
-}
-
-.info-projectos .nombre-projecto {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-.info-projectos p {
-  margin-left: 20px;
-}
-
-.info-projectos .fecha-creacion-projecto {
-  display: flex;
-  flex-direction: row;
-  padding-top: 10px;
-  justify-content: center;
-  align-items: center;
-}
-
-.info-projectos .duracion-projecto {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding-top: 10px;
-}
-
-.time-tracker {
-  width: 100%;
-  height: 100%;
-  padding: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin-top: 30px;
-  border-radius: 5px;
-  background: var(--backgroundElement);
-  box-sizing: border-box;
-}
-
-.titulo-time-tracker {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: auto;
-  padding-bottom: 20px;
-}
-
-.contenedor-cronometro {
-  width: 100%;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  border-radius: 5px;
-  background: var(--backgroundAccion);
-  box-sizing: border-box;
-}
-
-#cronometro {
-  font-family: 'Chivo Mono', monospace;
-  font-size: 70px;
-}
-
-.contenedor-botones {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-#boton-inicio-pausa {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  background-color: var(--colorBotones);
-  color: var(--colorTexto);
-  font-size: var(--fontSizes);
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-#boton-inicio-pausa:hover {
-  background-color: var(--colorBotonesHover);
-  color: var(--colorTextoBotonHover);
-}
-
-#boton-reiniciar {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  background-color: var(--colorBotones);
-  color: var(--colorTexto);
-  font-size: var(--fontSizes);
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-#boton-reiniciar:hover {
-  background-color: var(--colorBotonesHover);
-  color: var(--colorTextoBotonHover);
-}
-
-.contenedor-time-visual {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  flex-wrap: nowrap;
-}
-
-.contenedor-time-visual progress {
-  width: 100%;
-  height: 40px;
-  border: 0.5px solid var(--backgroundAccion);
-  border-radius: 5px;
-  box-sizing: border-box;
-}
-
-.pomodoro::-webkit-progress-bar {
-  background-color: var(--backgroundPomodoro);
-}
-
-.break::-webkit-progress-bar {
-  background-color: var(--backgroundBreak);
-}
-
-.pomodoro::-webkit-progress-value {
-  background-color: rgb(32, 162, 71);
-}
-
-.break::-webkit-progress-value {
-  background-color: rgb(218, 253, 103);
-}
-
-.contenedor-time-visual .pomodoro {
-  width: 50%;
-}
-
-.contenedor-time-visual .break {
-  width: 20%;
-}
-
-.contenedor-time-visual .long-break {
-  width: 35%;
-}
-
-/* Contenedor reportes */
-.contenedor-reportes{
-  width: 100%;
-  max-width: 80%;
-  height: 100%;
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border-radius: 6px;
-  background: var(--backgroundSection);
-  box-sizing: border-box;
-}
-
-.contendor-configuracion{
-  width: 100%;
-  max-width: 80%;
-  height: 100%;
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border-radius: 6px;
-  background: var(--backgroundSection);
-  box-sizing: border-box;
-}
-
-.contenedor-contacto{
+/***********************************   contenedor contacto **************************************/
+.contenedor-contacto {
   width: 100%;
   max-width: 80%;
   height: 100%;

@@ -10,18 +10,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@300&display=swap" rel="stylesheet">
   <link rel="shortcut icon" href="./assets/img/favicon.png" type="image/png">
   <link rel="stylesheet" href="style.css">
-
+  <link rel="stylesheet" href="./timeTracker/timeTracker.css">
+  <link rel="stylesheet" href="./reportes/reportes.css">
 </head>
 
 <body>
-
   <section class="contenedor-side-bar">
     <div class="contenedor-logo">
-      <h1>TimeGaps</h1>
+      <img src="./assets/img/Logo.png" alt="imagen logo">
     </div>
     <nav class="menu-barra-lateral">
       <ul class="lista-nav">
-        <li>
+        <li class="elementoLi active">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock"
             viewBox="0 0 16 16">
             <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z" />
@@ -29,8 +29,7 @@
           </svg>
           <a href="#timeTracker" onclick="mostrarSeccion('timeTracker')">Time Tracker</a>
         </li>
-
-        <li>
+        <li class="elementoLi">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
             class="bi bi-file-earmark-text" viewBox="0 0 16 16">
             <path
@@ -40,7 +39,7 @@
           </svg>
           <a href="#reportes" onclick="mostrarSeccion('reportes')">Reportes</a>
         </li>
-        <li>
+        <li class="elementoLi">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear"
             viewBox="0 0 16 16">
             <path
@@ -50,7 +49,7 @@
           </svg>
           <a href="#configuracion" onclick="mostrarSeccion('configuracion')">Configuracion</a>
         </li>
-        <li>
+        <li class="elementoLi">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-plus"
             viewBox="0 0 16 16">
             <path
@@ -63,122 +62,42 @@
       </ul>
     </nav>
     <div class="botones-accesibilidad">
-      <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-translate" viewBox="0 0 16 16">
-        <path d="M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286H4.545zm1.634-.736L5.5 3.956h-.049l-.679 2.022H6.18z"/>
-        <path d="M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2zm7.138 9.995c.193.301.402.583.63.846-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6.066 6.066 0 0 1-.415-.492 1.988 1.988 0 0 1-.94.31z"/>
-      </svg>  
-      <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-moon" viewBox="0 0 16 16">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-translate" viewBox="0 0 16 16">
+        <path
+          d="M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286H4.545zm1.634-.736L5.5 3.956h-.049l-.679 2.022H6.18z" />
+        <path
+          d="M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2zm7.138 9.995c.193.301.402.583.63.846-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6.066 6.066 0 0 1-.415-.492 1.988 1.988 0 0 1-.94.31z" />
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-moon" viewBox="0 0 16 16">
         <path
           d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278zM4.858 1.311A7.269 7.269 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.316 7.316 0 0 0 5.205-2.162c-.337.042-.68.063-1.029.063-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286z" />
       </svg>
-      <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-brightness-high" viewBox="0 0 16 16">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-brightness-high" viewBox="0 0 16 16">
         <path
           d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
       </svg>
     </div>
     <p>Copyright © 2023 💜 <br>Diseñado y construido por Diego Mejia.</p>
-    
+
   </section>
 
-  <section class="contenedor-principal">
-
+  <section class="contenedor-principal" id="contenedor-principal">
     <div class="seccion seccion-visible contenedor-time-tracker" id="timeTracker">
-      <div class="contenedor-info-projectos">
-
-        <div class="titulo-info-projectos">
-          <h2>Sección Projectos</h2>
-        </div>
-        <div class="contenedor-crear-projectos">
-          <div class="contenedor-input">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-              <path
-                d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
-              <path fill-rule="evenodd"
-                d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
-            </svg>
-            <input type="text" name="" id="" placeholder="Escribe el nombre de tu projecto...">
-          </div>
-
-          <div class="contendor-botones">
-            <button>New Project</button>
-            <select name="nombre_del_elemento">
-              <option value="" disabled selected>Projectos</option>
-              <option value="opcion1">Opción 1</option>
-              <option value="opcion2">Opción 2</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="info-projectos">
-          <div class="nombre-projecto">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-card-checklist" viewBox="0 0 16 16">
-              <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
-              <path d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"/>
-            </svg>
-            <h3>Desarrollo de aplicacion TimeGaps</h3>
-          </div>
-          <div class="fecha-creacion-projecto">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-calendar-week" viewBox="0 0 16 16">
-              <path
-                d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z" />
-              <path
-                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
-            </svg>
-            <h4 for="fechaProjecto">Fecha de creacion:</h4>
-            <p name="fechaProjecto" required>05/08/2023</p>
-          </div>
-          <div class="duracion-projecto">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
-              <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z" />
-              <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z" />
-            </svg>
-            <h4 for="duracion">Horas trabajadas:</h4>
-            <p name="duracion" required>60:00:00</p>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="time-tracker">
-        <div class="titulo-time-tracker">
-          <h2>Sección Pomodoro</h2>
-        </div>
-        <div class="contenedor-cronometro">
-          <h1 id="cronometro">00:00:00</h1>
-          <p id="tagProgress">Pomodoro #1</p>
-        </div>
-        <div class="contenedor-time-visual">
-          <progress id="pomodoro1" class="pomodoro" value="0" max="1500"></progress>
-          <progress id="break1" class="break" value="0" max="300"></progress>
-          <progress id="pomodoro2" class="pomodoro" value="0" max="1500"></progress>
-          <progress id="break2" class="break" value="0" max="300"></progress>
-          <progress id="pomodoro3" class="pomodoro" value="0" max="1500"></progress>
-          <progress id="break3" class="break" value="0" max="300"></progress>
-          <progress id="pomodoro4" class="pomodoro" value="0" max="1500"></progress>
-          <progress id="break4" class="long-break" value="0" max="900"></progress>
-        </div>
-        <div class="contenedor-botones">
-          <button class="boton" id="boton-inicio-pausa">Iniciar</button>
-          <button class="boton" id="boton-reiniciar">Reset</button>
-        </div>
-      </div>
     </div>
 
     <div class="seccion contenedor-reportes" id="reportes">
-      <h1>Hello World</h1>
     </div>
 
     <div class="seccion contendor-configuracion" id="configuracion">
-
     </div>
 
     <div class="seccion contenedor-contacto" id="contacto">
-
     </div>
-
   </section>
 
-  <script src="script.js"></script>
+  <script src="./script.js"></script>
+  <script src="./timeTracker/timeTrackerApp.js"></script>
+  <script src="./reportes/reportes.js"></script>
 </body>
 
 </html>

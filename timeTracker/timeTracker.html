@@ -1,0 +1,135 @@
+<div class="contenido-timeTracker" id="content-timeTracker">
+
+  <div class="contenedor-interno-infoProjectos">
+    <h2 class="titulo-info-projectos">Crea o selecciona un projecto 😎 </h2>
+
+    <div class="contenedor-crear-projectos">
+      <div class="contenedor-input">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+          <path
+            d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+          <path fill-rule="evenodd"
+            d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+        </svg>
+        <input type="text" name="" id="" placeholder="Escribe el nombre de tu projecto...">
+      </div>
+
+      <div class="contendor-botones">
+        <button>New Project</button>
+        <select name="nombre_del_elemento">
+          <option value="" disabled selected>Projectos</option>
+          <option value="opcion1">Opción 1</option>
+          <option value="opcion2">Opción 2</option>
+          <option value="opcion2">Opción 3</option>
+          <option value="opcion2">Opción 4</option>
+          <option value="opcion2">Opción 5</option>
+          <option value="opcion2">Opción 2</option>
+          <option value="opcion2">Opción 3</option>
+          <option value="opcion2">Opción 4</option>
+          <option value="opcion2">Opción 5</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="info-projectos">
+      <div class="info-projectos">
+        <div class="nombre-projecto">
+          <h3>Desarrollo de aplicacion TimeGaps</h3>
+        </div>
+
+        <div class="fecha-creacion-projecto">
+          <img src="../assets/img/icon-calendar.svg "></img>
+          <h4 for="fechaProjecto">Fecha de creacion:</h4>
+          <p name="fechaProjecto" required>05/08/2023</p>
+        </div>
+
+        <div class="duracion-projecto">
+          <img src="../assets/img/icon-clock.svg "></img>
+          <h4 for="duracion">Horas trabajadas:</h4>
+          <p name="duracion" required>60:00:00</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="contenedor-interno-timeTracker">
+
+    <h2 class="titulo-time-tracker">Herramienta pomodoro ⏲ </h2>
+
+    <div class="contenedor-cronometro">
+      <div class="cronometro">
+        <h1 id="cronometro">00:00:00</h1>
+        <div class="contenedor-botones">
+          <button class="boton" id="boton-inicio-pausa">Iniciar</button>
+          <button class="boton" id="boton-reiniciar">Reset</button>
+          <button class="boton" id="boton-programar">Programar</button>
+        </div>
+      </div>
+     <div class="estado-progreso">
+      <p id="tagProgress">Vuelta Nro. 1 : </p>
+      <p id="tagProgress">Pomodoro #1</p>
+     </div>
+    </div>
+
+    <div class="contenedor-time-visual">
+      <progress id="pomodoro1" class="pomodoro" value="0" max="1500"></progress>
+      <progress id="break1" class="break" value="0" max="300"></progress>
+      <progress id="pomodoro2" class="pomodoro" value="0" max="1500"></progress>
+      <progress id="break2" class="break" value="0" max="300"></progress>
+      <progress id="pomodoro3" class="pomodoro" value="0" max="1500"></progress>
+      <progress id="break3" class="break" value="0" max="300"></progress>
+      <progress id="pomodoro4" class="pomodoro" value="0" max="1500"></progress>
+      <progress id="break4" class="long-break" value="0" max="900"></progress>
+    </div>
+  </div>
+
+  <div class="contenedor-interno-historial">
+    <h1 class="title-historial">Historial del projecto 📄 </h1>
+    <div class="contenedor-tabla">
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Encabezado 1</th>
+            <th>Encabezado 2</th>
+            <th>Encabezado 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Dato 1</td>
+            <td>Dato 2</td>
+            <td>Dato 3</td>
+          </tr>
+          <tr>
+            <td>Dato 4</td>
+            <td>Dato 5</td>
+            <td>Dato 6</td>
+          </tr>
+          <tr>
+            <td>Dato 4</td>
+            <td>Dato 5</td>
+            <td>Dato 6</td>
+          </tr>
+          <tr>
+            <td>Dato 4</td>
+            <td>Dato 5</td>
+            <td>Dato 6</td>
+          </tr>
+          <tr>
+            <td>Dato 4</td>
+            <td>Dato 5</td>
+            <td>Dato 6</td>
+          </tr>
+          <tr>
+            <td>Dato 4</td>
+            <td>Dato 5</td>
+            <td>Dato 6</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
